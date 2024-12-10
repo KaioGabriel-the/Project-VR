@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=3 uid="uid://bipmcxfiyxtsx"]
+
+[ext_resource type="ArrayMesh" uid="uid://iseydhhm5jvy" path="res://hands/models/hand_right.mesh" id="1_rtoso"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tb16i"]
+radius = 0.0247802
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_escnm"]
+radius = 0.0180647
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_22iob"]
+radius = 0.0145918
+
+[node name="HandRigidbodyRight" type="RigidBody3D"]
+mass = 0.2
+gravity_scale = 0.0
+linear_damp = 50.0
+angular_damp = 50.0
+
+[node name="HandRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+mesh = ExtResource("1_rtoso")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219368, 0.017, 0.0621379)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219368, -0.013, 0.0621379)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219371, -0.021, 0.0351379)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219374, -0.027, -0.00386213)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219375, 0.02, -0.0118621)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00821937, 0.031, 0.0361379)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000219371, 0.005, 0.0251379)
+shape = SubResource("SphereShape3D_tb16i")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0202194, 0.052, 0.0171379)
+shape = SubResource("SphereShape3D_escnm")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0342194, 0.065, -0.00786213)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0462194, 0.073, -0.0298621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000442747, 0.0308232, -0.0436766)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021938, 0.033, -0.0658621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00421938, 0.034, -0.0848621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0102194, 0.036, -0.106862)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00278062, 0.004, -0.0458621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021938, 0.004, -0.0688621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122194, 0.008, -0.117862)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00621938, 0.006, -0.0938621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00110951, -0.0211291, -0.0388279)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00421938, -0.021, -0.0828621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00121938, -0.021, -0.0608621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00821938, -0.019, -0.102862)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000469416, -0.0443998, -0.0340058)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00121938, -0.044, -0.0558621)
+shape = SubResource("SphereShape3D_22iob")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00321938, -0.044, -0.0758621)
+shape = SubResource("SphereShape3D_22iob")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jyvxcyria8bw"]
+
+[ext_resource type="Material" uid="uid://bj7yvcqoco0ds" path="res://hands/models/hand_contr_mat.material" id="1_14l54"]
+[ext_resource type="ArrayMesh" uid="uid://iseydhhm5jvy" path="res://hands/models/hand_right.mesh" id="2_c8m8y"]
+
+[node name="HandContrRight" type="Node3D"]
+
+[node name="HandRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
+material_override = ExtResource("1_14l54")
+mesh = ExtResource("2_c8m8y")
