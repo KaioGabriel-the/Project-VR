@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dc4m1isoxu88"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jfq7d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h4ntq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2djls"]
+sky_material = SubResource("ProceduralSkyMaterial_h4ntq")
+
+[sub_resource type="Environment" id="Environment_rp58c"]
+background_mode = 2
+sky = SubResource("Sky_2djls")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5trbd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yvxak"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_jfq7d")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rp58c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2292, 1.00754)
+
+[node name="XRController3DLeft" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DLeft"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.126312, 0.525101, 0)
+mesh = SubResource("BoxMesh_5trbd")
+
+[node name="XRController3DRight" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DRight"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.48314, 0.525101, 0)
+mesh = SubResource("BoxMesh_5trbd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_yvxak")
