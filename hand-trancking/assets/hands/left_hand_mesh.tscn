@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhmsn3bg6kpc"]
+
+[ext_resource type="PackedScene" uid="uid://d22k0sp2hinew" path="res://assets/gltf/LeftHandHumanoid.gltf" id="1_pxxoj"]
+
+[node name="LeftHandMesh" type="XRNode3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"/user/hand_tracker/left"
+show_when_tracked = true
+
+[node name="LeftHandHumanoid2" parent="." instance=ExtResource("1_pxxoj")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
+
+[editable path="LeftHandHumanoid2"]
