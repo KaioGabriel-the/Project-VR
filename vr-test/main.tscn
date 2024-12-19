@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc4m1isoxu88"]
+[gd_scene load_steps=7 format=3 uid="uid://dc4m1isoxu88"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jfq7d"]
-[ext_resource type="PackedScene" path="res://assents/Hand_Right.scn" id="2_m07n4"]
-[ext_resource type="PackedScene" uid="uid://b4u0d2eosy7da" path="res://assents/Hand_Left.scn" id="3_1qyqq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h4ntq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,6 +14,8 @@ background_mode = 2
 sky = SubResource("Sky_2djls")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5trbd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_yvxak"]
 
@@ -32,27 +32,21 @@ shadow_enabled = true
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.546546, 1.00754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2292, 1.00754)
 
 [node name="XRController3DLeft" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 tracker = &"left_hand"
 
-[node name="Skeleton3D" type="Skeleton3D" parent="XROrigin3D/XRController3DLeft"]
-
-[node name="Hand_Right" parent="XROrigin3D/XRController3DLeft/Skeleton3D" instance=ExtResource("2_m07n4")]
-transform = Transform3D(-0.9971, -0.648514, 2.83475e-08, 0, -5.19923e-08, -1.18945, 0.648514, -0.9971, 4.35846e-08, 0, 0, 0)
-skeleton = NodePath("")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DLeft"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.126312, 0.525101, 0)
+mesh = SubResource("BoxMesh_5trbd")
 
 [node name="XRController3DRight" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 tracker = &"right_hand"
 
-[node name="Skeleton3D" type="Skeleton3D" parent="XROrigin3D/XRController3DRight"]
-
-[node name="Hand_Left" parent="XROrigin3D/XRController3DRight/Skeleton3D" instance=ExtResource("3_1qyqq")]
-transform = Transform3D(-0.77046, 0, 0.906184, 0, 1.18944, 0, -0.906184, 0, -0.77046, 0, 0, 0)
-skeleton = NodePath("../../../XRController3DLeft")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3DRight"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.48314, 0.525101, 0)
+mesh = SubResource("BoxMesh_5trbd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_yvxak")
